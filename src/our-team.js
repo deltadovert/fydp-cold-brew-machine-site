@@ -8,6 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const OurTeam = ({ show }) => {
   const isDesktop = useMediaQuery('(min-width:800px)');
+  const useSmallImg = useMediaQuery('(max-width:500px');
   console.log(`isMobile ${isDesktop}`);
 
   const team_members = {
@@ -56,13 +57,13 @@ const OurTeam = ({ show }) => {
       gridTemplateColumns: isDesktop ? 'auto auto auto auto' : 'auto auto',
     },
     team_member_container: {
-      width: 160,
+      width: useSmallImg ? 120 : 160,
       paddingLeft: 20,
       paddingRight: 20,
     },
     image: {
-      width: 160,
-      height: 160,
+      width: useSmallImg ? 120 : 160,
+      height: useSmallImg ? 120 : 160,
       border: '5px solid',
       borderImageSlice: 1,
       borderImageSource: 'linear-gradient(to right, black, purple)',

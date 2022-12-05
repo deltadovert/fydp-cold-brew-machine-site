@@ -3,6 +3,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Header = () => {
   const isDesktop = useMediaQuery('(min-width: 800px)');
+  const showUW = useMediaQuery('(min-width:500px)');
+
   const style = {
     container: {
       width: '100%',
@@ -36,7 +38,7 @@ const Header = () => {
 
   return (
     <div style={style.container}>
-      <img src={uw} style={style.image} />
+      {showUW ? <img src={uw} style={style.image} /> : null}
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={style.subtext}>☕️ FYDP Group 26 🦾</div>
         <div style={style.text}>Cold Brew Machine</div>

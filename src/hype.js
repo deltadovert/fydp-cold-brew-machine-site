@@ -1,9 +1,11 @@
+import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import model from './assets/model.png';
 import Spacer from './spacer';
 
 const Hype = ({ displayState }) => {
+  const useBigText = useMediaQuery('(min-width: 500px)');
   const [fade, setFade] = React.useState(true);
 
   React.useEffect(() => {
@@ -18,7 +20,7 @@ const Hype = ({ displayState }) => {
   const style = {
     text: {
       fontWeight: 'bold',
-      fontSize: 40,
+      fontSize: useBigText ? 40 : 30,
       paddingLeft: 20,
       paddingRight: 20,
     },
