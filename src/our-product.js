@@ -66,6 +66,7 @@ const OurProduct = ({ show }) => {
             alt='model of coffee maker press'
           />
         </div>
+        <Spacer height={'30px'} />
         <div style={sharedStyles.detailsContainer}>
           <div style={sharedStyles.details}>
             Schedule a brew from our mobile app and the machine will dose your
