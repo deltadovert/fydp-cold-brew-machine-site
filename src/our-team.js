@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const OurTeam = ({ show }) => {
   const isDesktop = useMediaQuery('(min-width:800px)');
-  const useSmallImg = useMediaQuery('(max-width:500px');
+  const useSmallImg = useMediaQuery('(max-width:500px)');
   console.log(`isMobile ${isDesktop}`);
 
   const team_members = {
