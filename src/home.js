@@ -26,10 +26,10 @@ const Home = () => {
   const [showProduct, setShowProduct] = React.useState(false);
   const [showTeam, setShowTeam] = React.useState(false);
 
+  const show = displayState === 3;
   React.useEffect(() => {
-    const _show = displayState == 3;
-    if (_show) {
-      setShowMission(_show);
+    if (show) {
+      setShowMission(show);
       setTimeout(() => {
         setShowProduct(true);
         setTimeout(() => {
@@ -37,7 +37,7 @@ const Home = () => {
         }, 1000);
       }, 1000);
     }
-  }, [displayState]);
+  }, [show]);
 
   return (
     <div
@@ -52,21 +52,25 @@ const Home = () => {
 
       <Hype displayState={displayState} />
 
-      <Spacer height={80} />
+      {show ? (
+        <>
+          <Spacer height={80} />
 
-      <OurMission show={showMission} />
+          <OurMission show={showMission} />
 
-      <Spacer height={40} />
+          <Spacer height={40} />
 
-      <OurProduct show={showProduct} />
+          <OurProduct show={showProduct} />
 
-      <Spacer height={40} />
+          <Spacer height={40} />
 
-      <OurTeam show={showTeam} />
+          <OurTeam show={showTeam} />
 
-      <Spacer height={100} />
+          <Spacer height={50} />
 
-      <Footer />
+          <Footer />
+        </>
+      ) : null}
     </div>
   );
 };
