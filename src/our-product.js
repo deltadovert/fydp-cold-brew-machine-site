@@ -4,18 +4,37 @@ import Press from './assets/our-product/press.png';
 import ModelNoPress from './assets/our-product/model-no-press.png';
 import Spacer from './spacer';
 import { sharedStyles } from './shared-styles';
+import { useMediaQuery } from '@mui/material';
 const OurProduct = ({ show }) => {
+  const useSmallImg = useMediaQuery('(max-width:600px)');
   const style = {
     container: {
       display: 'flex',
       flexDirection: 'column',
+      justifyContent: 'center',
       alignItems: 'center',
       opacity: show ? 1 : 0,
+      paddingLeft: 20,
+      paddingRight: 20,
+      maxWidth: 650,
+    },
+    header: {
+      fontSize: 40,
+      fontWeight: 'bold',
+    },
+    detailsContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      maxWidth: 650,
     },
     row: {
       display: 'flex',
+      flexDirection: 'row',
+      width: '100%',
+      justifyContent: 'space-around',
     },
-    image: { height: '300px' },
+    image: { height: useSmallImg ? '220px' : '300px' },
   };
   return (
     <Fade when={show}>
@@ -36,13 +55,11 @@ const OurProduct = ({ show }) => {
             src={FullModel}
             alt='full model of coffee maker'
           />
-          <Spacer width={'60px'} />
           <img
             style={style.image}
             src={ModelNoPress}
             alt='model of coffee maker without press'
           />
-          <Spacer width={'60px'} />
           <img
             style={style.image}
             src={Press}
