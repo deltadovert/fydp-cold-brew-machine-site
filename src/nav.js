@@ -55,7 +55,7 @@ const Nav = ({ onIconPress }) => {
 
 const style = {
   container: {
-    position: 'absolute',
+    position: 'fixed',
     zIndex: 999,
     backgroundImage: 'linear-gradient(to right, black, purple)',
     width: NAV_WIDTH,
