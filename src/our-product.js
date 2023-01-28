@@ -4,7 +4,7 @@ import Press from './assets/our-product/press.png';
 import ModelNoPress from './assets/our-product/model-no-press.png';
 import Spacer from './spacer';
 import { sharedStyles } from './shared-styles';
-import { useMediaQuery } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 const OurProduct = ({ show }) => {
   const useSmallImg = useMediaQuery('(max-width:600px)');
   const style = {

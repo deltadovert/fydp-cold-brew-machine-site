@@ -4,6 +4,7 @@ const Footer = () => {
             width: '100%',
             height: 40,
             position: 'relative',
+            bottom: 0,
         },
         text: {
             position: 'absolute',

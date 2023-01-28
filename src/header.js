@@ -1,7 +1,8 @@
 import uw from './assets/university-of-waterloo.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Hamborger from './hamborger';
 
-const Header = () => {
+const Header = ({ onNavExpand }) => {
   const isDesktop = useMediaQuery('(min-width: 800px)');
   const showUW = useMediaQuery('(min-width:500px)');
 
@@ -38,6 +39,7 @@ const Header = () => {
 
   return (
     <div style={style.container}>
+      <Hamborger onPress={onNavExpand} />
       {showUW ? <img src={uw} style={style.image} /> : null}
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={style.subtext}>☕️ FYDP Group 26 🦾</div>

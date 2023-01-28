@@ -46,9 +46,9 @@ const Home = () => {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '100vh',
       }}
     >
-      <Header />
 
       <Hype displayState={displayState} />
 
@@ -68,7 +68,6 @@ const Home = () => {
 
           <Spacer height={50} />
 
-          <Footer />
         </>
       ) : null}
     </div>
